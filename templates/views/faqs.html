@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="max-w-7xl mx-auto my-12 sm:text-2xl">
+	<section class="dark:bg-gray-800 dark:text-gray-100">
+		<div class="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
+			<h2 class="text-2xl font-semibold sm:text-4xl text-center my-12">Frequently Asked Questions</h2>
+			<div class="space-y-4">
+				<details class="w-full border rounded-lg">
+					<summary class="px-4 py-6 focus:outline-none focus-visible:ri bg-light_grey border-2 border-gray-300">What journeys can I undertake?</summary>
+					<p class="px-4 py-8 pt-0 ml-4 mt-4 dark:text-gray-400">This service enables registered passengers to undertake trips to medical, physio,day centre and dental appointments. Medical journeys will always be given priority but other journey requests will be considered. Due to the volume of work we may not always be able to assist with your request </p>
+				</details>
+				<details class="w-full border rounded-lg">
+					<summary class="px-4 py-6 focus:outline-none focus-visible:ri bg-light_grey border-2 border-gray-300">How much does it cost?</summary>
+					<p class="px-4 py-6 pt-0 ml-4 mt-4 dark:text-gray-400">Annual subscription is currently free. Fixed fares will be charged for each journey based on mileage; the amount will be advised at the time of booking or on request. By prior arrangement, and where appropriate, the driver will wait for up to four hours to take you home. If longer, an additional amount may be charged. </p>
+				</details>
+				<details class="w-full border rounded-lg">
+					<summary class="px-4 py-6 focus:outline-none focus-visible:ri bg-light_grey border-2 border-gray-300">What is the catchment area?</summary>
+					<div class="px-4 py-6 pt-0 ml-4 mt-4 dark:text-gray-400 grid sm:grid-cols-2">
+						<ul class="col-span-1">
+							<li>Adversane</li>
+							<li>Alfold</li>
+							<li>Barns Green</li>
+							<li>Billingshurst</li>
+							<li>Broadford Bridge</li>
+							<li>Coolham</li>
+							<li>Dragons Green</li>
+							<li>Five Oaks</li>
+						</ul>
+					
+						<ul class="col-span-1">
+							<li>Ichingfield</li>
+							<li>Ifold</li>
+							<li>Kirdford</li>
+							<li>Loxwood</li>
+							<li>Plaistow</li>
+							<li>Shipley</li>
+							<li>The Haven</li>
+							<li>And Hamlets within this catchment</li>
+						</ul> 
+						</div>
+				</details>
+				<details class="w-full border rounded-lg">
+					<summary class="px-4 py-6 focus:outline-none focus-visible:ri bg-light_grey border-2 border-gray-300">How do I book a journey?</summary>
+					<p class="px-4 py-6 pt-0 ml-4 mt-4 dark:text-gray-400">To book your journey call 01403 787696 between the hours of 09:30 and 11:30am, Mon-Fri. An answerphone will be in operation outside of these times. Please leave your name and number and we will call you back. To help us ensure we can meet your needs, we prefer 48 hours notice, however you may book well in advance. We will always endeaver to accommodate emergencies. </p>
+				</details>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="flex items-center rounded shadow-md overflow-hidden  relative dark:bg-gray-900 dark:text-gray-100">
+			<div class="self-stretch flex items-center px-3 flex-shrink-0 dark:bg-gray-700 dark:text-violet-400">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-12 h-12">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+				</svg>
+			</div>
+			<div class="p-4 flex-1">
+				<h3 class="text-2xl font-bold">Please note.</h3>
+				<p class="text-xl dark:text-gray-400">The first time you book we will take your details, including: name,address,telephone number and any other relevant data.These will help us with booking future journeys for you and will be held securely. We will always do our best to supply you with a driver, and we will call you a few days prior to your journey with the name of your driver.
+				</p>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}

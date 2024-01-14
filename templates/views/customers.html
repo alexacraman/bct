@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="max-w-7xl mx-auto my-12">
+
+<div class="grid grid-cols-1 lg:grid-cols-2 sm:p-12"   >
+    <div class="col-span-1 border-4 rounded  hidden lg:block" id="caddy"></div>
+    <div class="col-span-1 p-2 sm:p-6 text-2xl font-semibold  border-4 rounded">
+        <p class="p-2 font-medium">Billingshurst Community Transport provides a service to elderly, frail and infirm residents who are unable to use public transport.
+            
+         </p>
+         <p class="p-2 font-medium">Volunteer drivers will use either their own cars, or drive a fully wheelchair accessible vehicle provided by the scheme.</p>
+         <p class="p-2 font-medium">    Where appropriate a companion may accompany a passenger at no additional charge.The car or accessible vehicle will pick up passengers from their home, or any other location within the area served.</p>
+        
+         <div class="flex justify-center mt-6 border-2 rounded shadow-lg " id="Warn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="orange" class="h-24 w-24 inline ">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+              </svg>
+              <p class=" justify-center p-4" >
+                Rear access to wheelchair vehicle is via a ramp and hoist. Full restraining straps are fitted.
+              </p>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    const caddy = document.querySelector('#caddy');
+    const warn  = document.querySelector('#Warn');
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+                caddy.classList.remove('hidden')
+                caddy.classList.add('visible','slide')
+               
+                warn.classList.remove('hidden')
+                warn.classList.add('visible','slideLeft')
+                
+            }
+            else{
+                // caddy.classList.add('hidden')
+                // caddy.classList.remove('visible','slide')
+                // warn.classList.add('hidden')
+                // warn.classList.remove('visible','slideLeft')
+ 
+            }
+        })
+    })
+    observer.observe(caddy)
+</script>
+{% endblock %}

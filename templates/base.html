@@ -1,0 +1,36 @@
+<!doctype html>
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/tailwind.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0ndXRmLTgnPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0nODAwcHgnIGhlaWdodD0nODAwcHgnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz4NCjxwYXRoIGZpbGwtcnVsZT0nZXZlbm9kZCcgY2xpcC1ydWxlPSdldmVub2RkJyBkPSdNOS45OTUwMiA0SDE0LjAwNUMxNy43ODU2IDQgMTkuNjc1OSA0IDIwLjg1MDQgNS4xNzE1N0MyMS42NTkxIDUuOTc4MjMgMjEuOTExIDcuMTIzMzkgMjEuOTg5NCA4Ljk4OTQ3QzIyLjAwNSA5LjM1OTU0IDIyLjAxMjggOS41NDQ1OCAyMS45NDM3IDkuNjY4MDNDMjEuODc0NiA5Ljc5MTQ3IDIxLjU5ODcgOS45NDU1NCAyMS4wNDY5IDEwLjI1MzdDMjAuNDM0MSAxMC41OTU5IDIwLjAxOTkgMTEuMjQ5NyAyMC4wMTk5IDEyQzIwLjAxOTkgMTIuNzUwMyAyMC40MzQxIDEzLjQwNDEgMjEuMDQ2OSAxMy43NDYzQzIxLjU5ODcgMTQuMDU0NSAyMS44NzQ2IDE0LjIwODUgMjEuOTQzNyAxNC4zMzJDMjIuMDEyOCAxNC40NTU0IDIyLjAwNSAxNC42NDA1IDIxLjk4OTQgMTUuMDEwNUMyMS45MTEgMTYuODc2NiAyMS42NTkxIDE4LjAyMTggMjAuODUwNCAxOC44Mjg0QzE5LjY3NTkgMjAgMTcuNzg1NiAyMCAxNC4wMDUgMjBIOS45OTUwMkM2LjIxNDM4IDIwIDQuMzI0MDcgMjAgMy4xNDk1OCAxOC44Mjg0QzIuMzQwOTEgMTguMDIxOCAyLjA4OTAzIDE2Ljg3NjYgMi4wMTA1OCAxNS4wMTA1QzEuOTk1MDIgMTQuNjQwNSAxLjk4NzI0IDE0LjQ1NTQgMi4wNTYzNCAxNC4zMzJDMi4xMjU0NSAxNC4yMDg1IDIuNDAxMzMgMTQuMDU0NSAyLjk1MzA4IDEzLjc0NjNDMy41NjU4NiAxMy40MDQxIDMuOTgwMDcgMTIuNzUwMyAzLjk4MDA3IDEyQzMuOTgwMDcgMTEuMjQ5NyAzLjU2NTg2IDEwLjU5NTkgMi45NTMwOCAxMC4yNTM3QzIuNDAxMzMgOS45NDU1NCAyLjEyNTQ1IDkuNzkxNDcgMi4wNTYzNCA5LjY2ODAyQzEuOTg3MjQgOS41NDQ1OCAxLjk5NTAyIDkuMzU5NTQgMi4wMTA1OCA4Ljk4OTQ3QzIuMDg5MDMgNy4xMjMzOSAyLjM0MDkxIDUuOTc4MjMgMy4xNDk1OCA1LjE3MTU3QzQuMzI0MDcgNCA2LjIxNDM5IDQgOS45OTUwMiA0Wk0xNS41NDc4IDguNDY5NjdDMTUuODQxNSA4Ljc2MjU2IDE1Ljg0MTUgOS4yMzc0NCAxNS41NDc4IDkuNTMwMzNMOS41MzI4OSAxNS41MzAzQzkuMjM5MjcgMTUuODIzMiA4Ljc2MzIxIDE1LjgyMzIgOC40Njk1OSAxNS41MzAzQzguMTc1OTYgMTUuMjM3NCA4LjE3NTk2IDE0Ljc2MjYgOC40Njk1OSAxNC40Njk3TDE0LjQ4NDUgOC40Njk2N0MxNC43NzgyIDguMTc2NzggMTUuMjU0MiA4LjE3Njc4IDE1LjU0NzggOC40Njk2N1pNMTQuNTE0OSAxNS41QzE1LjA2ODYgMTUuNSAxNS41MTc0IDE1LjA1MjMgMTUuNTE3NCAxNC41QzE1LjUxNzQgMTMuOTQ3NyAxNS4wNjg2IDEzLjUgMTQuNTE0OSAxMy41QzEzLjk2MTMgMTMuNSAxMy41MTI0IDEzLjk0NzcgMTMuNTEyNCAxNC41QzEzLjUxMjQgMTUuMDUyMyAxMy45NjEzIDE1LjUgMTQuNTE0OSAxNS41Wk05LjUwMjQ4IDEwLjVDMTAuMDU2MSAxMC41IDEwLjUwNSAxMC4wNTIzIDEwLjUwNSA5LjVDMTAuNTA1IDguOTQ3NzIgMTAuMDU2MSA4LjUgOS41MDI0OCA4LjVDOC45NDg4MiA4LjUgOC40OTk5OSA4Ljk0NzcyIDguNDk5OTkgOS41QzguNDk5OTkgMTAuMDUyMyA4Ljk0ODgyIDEwLjUgOS41MDI0OCAxMC41WicgZmlsbD0nIzFDMjc0QycvPg0KPC9zdmc+" />
+
+        <title> {% block title %}title | BCT{% endblock %}</title>
+    </head>
+   
+    <body class="min-h-screen text-gray-700">
+        <div class="max-w-sm mx-auto relative ">
+            {% if messages %}
+            <button type="button" class="close" aria-label="Close"></button>
+            <ul class="messages absolute left-4 right-4  top-4">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }} rounded-lg p-4 text-center"{% endif %}>
+                   
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                    {{ message }} 
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        {% include 'navbar.html' %}
+       
+        {% block content %}
+        {% endblock %}
+       {% include 'js.html' %}
+       {% include 'footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,94 @@
+{% load static %}
+{% url 'accounts:register' as signup_url %}
+{% url 'accounts:change_password' as change_password_url %}
+{% url 'accounts:password_reset' as reset_url %}
+{% url 'accounts:login_view' as login_url  %}
+{% url 'accounts:logout_view' as logout_url %}
+{% url 'accounts:account-menu' as account_url %}
+
+
+{% url 'contact' as contact_url %}
+{% url 'home_page' as home_url %}
+{% url 'volunteer' as volunteer_url %}
+{% url 'faqs' as faqs_url %}
+{% url 'team' as team_url %}
+{% url 'customers' as customers_url %}
+
+{% url 'donate:receive' as donation_url %}
+
+<div class="absolute top-0 left-0 " >
+  <a href="{{ home_url }}"><img src="{% static 'img/logo.png' %}" class="nav_img "></a>
+</div>
+
+<div class="navbar p-4 sm:p-6  text-xl"> 
+  
+  <div class="navbar_btn" >
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="h-10 w-10" viewBox="0 0 24 24">
+      <path d="M20,14H4c-1.105,0-2-0.895-2-2v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0	C22,13.105,21.105,14,20,14z" opacity=".35"></path><path d="M20,7H4C2.895,7,2,6.105,2,5v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0C22,6.105,21.105,7,20,7z"></path><path d="M20,21H4c-1.105,0-2-0.895-2-2v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0C22,20.105,21.105,21,20,21z"></path>
+      </svg>
+  </div>
+  <nav class="navbar_items rev_navbar_toggleShow ">
+        <div class="navbar_link   p-1 rounded" {% if request.path == home_page %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
+            <a class="nav-link" href="{{ home_url }}">Home</a>
+        </div>
+        <div class="navbar_link   p-1 rounded" {% if request.path == customers %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
+            <a class="nav-link" href="{{ customers_url }}">Customers</a>
+        </div>
+        <div class="navbar_link  p-1 rounded" {% if request.path == faqs_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+            <a class="nav-link" href="{{ faqs_url }}">FAQs</a>
+        </div>
+        <div class="navbar_link  p-1 rounded" {% if request.path == volunteer_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+            <a class="nav-link" href="{{ volunteer_url }}">Volunteer</a>
+        </div>
+        <div class="navbar_link p-1 rounded" {% if request.path == team_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+          <a class="nav-link" href="{{ team_url }}">Team</a>
+        </div>
+        <div class="navbar_link  p-1 rounded" {% if request.path == contact_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+          <a class="nav-link" href="{{ contact_url }}">Contact </a>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="navbar_link  p-1 rounded" {% if request.path == logout_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+          <a class="nav-link" href="{{ logout_url }}">Logout </a>
+        </div>
+        <div class="navbar_link  p-1 rounded" {% if request.path == account_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+          <a class="nav-link" href="{{ account_url }}">Account </a>
+        </div>
+        {% else %}
+        <div class="navbar_link  p-1 rounded" {% if request.path == login_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
+          <a class="nav-link" href="{{ login_url }}">Login </a>
+        </div>
+        {% endif %}
+        
+        <div class="navbar_link flex items-center rounded-lg border bg-red-800 hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-5 py-1 text-white text-2xl cursor-pointer" id="donationUrl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.121 7.629A3 3 0 0 0 9.017 9.43c-.023.212-.002.425.028.636l.506 3.541a4.5 4.5 0 0 1-.43 2.65L9 16.5l1.539-.513a2.25 2.25 0 0 1 1.422 0l.655.218a2.25 2.25 0 0 0 1.718-.122L15 15.75M8.25 12H12m9 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+             Donate </div>
+  </nav>
+ </div>
+
+
+ <script>
+  document.addEventListener('DOMContentLoaded',()=>{
+    const donationUrl = document.querySelector('#donationUrl')
+    donationUrl.classList.add('pointer-events-none')
+    donationUrl.addEventListener('click', ()=>{
+      get_donate_url()
+    })
+
+    async function get_donate_url(){
+    const url = "{% url 'donate:receive' %}"
+      try{
+        const repsonse = await fetch(url)
+        const data = await repsonse.json()
+        const stripe_endpoint = data.url
+        window.location.href = stripe_endpoint
+      }catch(error){
+        console.error('There was an error', error)
+      }
+    }
+  })
+ </script>
+
+
+

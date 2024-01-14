@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-sm mx-auto my-24">
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        {{ field.label_tag }} {{ field }}
+    {% endfor %}
+        <div class="flex justify-center">
+            <input class="py-3 px-8 border" type="submit">
+        </div>
+    </form>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+    const username = document.querySelector('#id_username');
+    const email = document.querySelector('#id_email');
+    const password = document.querySelector('#id_password');
+console.log(password)
+    username.classList.add('w-full', 'px-3', 'py-2', 'border', 'rounded-md', 'dark:border-gray-700', 'dark:bg-gray-900', 'dark:text-gray-100');
+    email.classList.add('w-full', 'px-3', 'py-2', 'border', 'rounded-md', 'dark:border-gray-700', 'dark:bg-gray-900', 'dark:text-gray-100');
+    // password.classList.add('hidden');
+    // password.previousSibling.classList.add('hidden')
+    // const passwordLabel = document.querySelector('label[for="id_password"]');
+    // console.log(passwordLabel)
+    // passwordLabel.style.display = 'none';
+});
+
+</script>
+{% endblock %}

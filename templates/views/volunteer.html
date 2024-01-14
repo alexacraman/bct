@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="max-w-sm sm:max-w-7xl mx-auto">
+    <section class="m-4 md:m-8 dark:bg-gray-800 dark:text-gray-100">
+        <div class="container mx-auto p-12 my-6 rounded text-center bg-light_grey border-2 border-gray-300">
+            <h2 class="text-5xl font-bold">Volunteer Drivers Urgently Needed!</h2>
+            <p class="dark:text-gray-400 text-2xl my-6">BCT currently supports over <span class="text-red-600">200</span> residents.</p>
+        </div>
+        <div class="container mx-auto mt-12 grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex flex-col items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 adverts" fill="red" class="bi bi-signpost-split" viewBox="0 0 16 16">
+                    <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4A1 1 0 0 1 2 7zm1 3V8H2l-.75 1L2 10zm0-5h6l.75-1L14 3H8z"/>
+                  </svg>
+                <h3 class="my-3 text-3xl font-semibold">Local Knowledge?</h3>
+                <div class="space-y-1 leadi text-lg">
+                    <p>Do you have a some knowledge of the local area?</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 adverts" fill="red" class="bi bi-speedometer" viewBox="0 0 16 16">
+                    <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2M3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                    <path fill-rule="evenodd" d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z"/>
+                  </svg>
+                <h3 class="my-3 text-3xl font-semibold">Milage Paid</h3>
+                <div class="space-y-1 leadi  text-lg">
+                    <p>Mileage allowance is covered and training available if needed.</p>
+                
+                </div>
+            </div>
+            <div class="flex flex-col items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 adverts" fill="red" class="bi bi-stopwatch" viewBox="0 0 16 16">
+                    <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5z"/>
+                    <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5M8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3"/>
+                  </svg>
+                <h3 class="my-3 text-3xl font-semibold">Give back</h3>
+                <div class="space-y-1 leadi  text-lg">
+                    <p>Do you have some time and would like to give to your local community?</p>
+                
+                </div>
+            </div>
+            <div class="flex flex-col items-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 adverts" fill="red" class="bi bi-person-vcard" viewBox="0 0 16 16">
+                    <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4m4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5M9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8m1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
+                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM1 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H8.96c.026-.163.04-.33.04-.5C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1.006 1.006 0 0 1 1 12z"/>
+                  </svg>
+                  
+                <h3 class="my-3 text-3xl font-semibold">UK Licence?</h3>
+                <div class="space-y-1 leadi  text-lg">
+                    <p>Do you hold a current UK driving licence?</p>
+
+                </div>
+            </div>
+           
+        </div>
+        <div class="container mx-auto p-12 text-center ">
+            
+            <p class="dark:text-gray-400 text-2xl">What our drivers say.</p>
+        </div>
+
+        <div class="container mx-auto grid justify-center gap-4 sm:grid-cols-2 my-12">
+            <div class="col-span-1 bg-light_grey p-12 border-2 border-gray-300">
+                <div class="flex justify-center">
+                    <video width="320" height="240" poster="{% static 'img/g.png' %}" controls >
+                        <source src="{% static 'img/g.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                     </video>
+                </div>
+                
+            </div>
+            <div class="col-span-1 bg-light_grey p-12 border-2 border-gray-300">
+                <div class="flex justify-center">
+                    <video width="320" height="240" poster="{% static 'img/b.png' %}" controls >
+                        <source src="{% static 'img/tw.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                     </video>
+                </div>
+            </div>
+        </div>
+
+        
+    </section>
+    <section class=" my-12">
+        <p class="text-2xl flex justify-center my-6">
+            BCT would not be able to provide this much appreciated community service without our valued drivers. We are always looking for volunteers, either to drive the BCT vehicle or their own cars. If you have any spare time and would be interested in joining us please contact the scheme co-ordinator Graeme on
+        </p>
+        <p class="text-2xl flex justify-center mt-12"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="red" class="bi bi-telephone" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg> 01403 787696
+
+        </p>
+    </section>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        const sponsorsAll = document.querySelectorAll('.adverts')
+        const observer = new IntersectionObserver((sponsors)=>{
+            sponsors.forEach((sponsor, index)=>{
+                if(sponsor.isIntersecting){
+                    sponsor.target.style.animationDelay = `${0.2 * index}s` 
+                    sponsor.target.classList.remove('invisible')
+                    sponsor.target.classList.add('visible')
+                    
+                    sponsor.target.classList.add('slide')
+                    
+                }
+            })
+        })
+
+        sponsorsAll.forEach((img)=>{
+            observer.observe(img)
+        })
+    })
+ </script>
+{% endblock %}

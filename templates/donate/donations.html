@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-sm sm:max-w-7xl mx-auto my-24">
+    <div class="container p-2 mx-auto sm:p-4 dark:text-gray-100">
+        <h2 class="mb-4 text-2xl font-semibold leadi">Donations</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full border-2 border-gray-400 shadow-2xl">
+                <thead class="dark:bg-gray-700 bg-gray-300">
+                    <tr class="text-left">
+                        <th class="p-3">Date</th>
+                        <th class="p-3">Amount</th>
+                        <th class="p-3">Name</th>
+                        <th class="p-3">Email</th>
+                        <th class="p-3 ">Post Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for donation in donations %}
+                    <tr class="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-900 bg-gray-100 border-gray-600 hover:bg-gray-200">
+                        <td class="p-3">
+                            <p>{{ donation.timestamp }}</p>
+                        </td>
+                        <td class="p-3">
+                            <p>{{ donation.amount }}</p>
+                        </td>
+                        <td class="p-3">
+                            <p>{{ donation.donor_name }}</p>
+                           
+                        </td>
+                        <td class="p-3">
+                            <p>{{ donation.email }}</p>
+                         
+                        </td>
+                        <td class="p-3">
+                            <p>{{ donation.postcode }}</p>
+                        </td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="pagination flex justify-center">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }} " >previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
