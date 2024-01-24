@@ -23,11 +23,9 @@
 <div class="navbar p-4 sm:p-6  text-xl"> 
   
   <div class="navbar_btn" >
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="h-10 w-10" viewBox="0 0 24 24">
-      <path d="M20,14H4c-1.105,0-2-0.895-2-2v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0	C22,13.105,21.105,14,20,14z" opacity=".35"></path><path d="M20,7H4C2.895,7,2,6.105,2,5v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0C22,6.105,21.105,7,20,7z"></path><path d="M20,21H4c-1.105,0-2-0.895-2-2v0c0-1.105,0.895-2,2-2h16c1.105,0,2,0.895,2,2v0C22,20.105,21.105,21,20,21z"></path>
-      </svg>
+    <!-- svg insert -->
   </div>
-  <nav class="navbar_items rev_navbar_toggleShow ">
+  <nav class="navbar_items rev_navbar_toggleShow  ">
         <div class="navbar_link   p-1 rounded" {% if request.path == home_page %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
             <a class="nav-link" href="{{ home_url }}">Home</a>
         </div>

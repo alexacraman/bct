@@ -13,6 +13,7 @@ class DonationsListView(LoginRequiredMixin, ListView):
     template_name = 'donate/donations.html'
     context_object_name = 'donations'
     paginate_by = 4
+    ordering = 'timestamp'
 
 def donation_json(request):
     data = {}

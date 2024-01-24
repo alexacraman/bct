@@ -2,15 +2,15 @@
 {% block content %}
 {% load static %}
 <div class="max-w-7xl mx-auto my-12">
-    <div class="grid grid-cols-1 sm:grid-cols-2">
-        <div class="col-span-1 p-2 sm:p-6">
-            <h1 class=" text-5xl font-semibold mb-6"> Billingshurst Community <span class="text-red-800">Transport</span> </h1>
-            <p class="text-2xl font-medium">  
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="col-span-1 p-2 sm:p-6 ">
+            <h1 class=" text-5xl font-semibold mb-6 text-center"> Billingshurst Community <span class="text-red-800">Transport</span> </h1>
+            <p class="text-2xl font-medium text-center">  
                 A scheme for those who are unable to use public transport including frail and/or disabled residents of Billingshurst and many of the surrounding villages.</p>
-                <p class="text-2xl font-medium ">    For more information please call <span class="text-red-800">01403 787696</span>  or email</p>
+                <p class="text-2xl font-medium text-center">    For more information please call <span class="text-red-800">01403 787696</span>  or email</p>
             
             <div class="flex justify-center my-12">
-                <button class="rounded-lg border bg-red-800 hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-8 py-3 text-white text-2xl">Email</button>
+                <a href="mailto:bct@billingshurst.gov.uk" target="_blank"  class="rounded-lg border bg-red-800 hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-8 py-3 text-white text-2xl">Email</a>
             </div>
         </div>
         <div class="col-span-1 p-2 sm:p-6 flex justify-center">
@@ -20,7 +20,7 @@
         </div>
         
         <script>
-          const images = ["{% static 'img/bil.jpg' %}","{% static 'img/pub.png' %}","{% static 'img/church.png' %}"];
+          const images = ["{% static 'img/bil.jpg' %}","{% static 'img/hall.png' %}", "{% static 'img/street.png' %}","{% static 'img/church.png' %}"];
         
           let currentIndex = 0;
           const imageElement = document.getElementById('image');
