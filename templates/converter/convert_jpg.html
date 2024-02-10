@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class="relative">
+  <section class="w-full py-12 bgimage">
+    
+    <div class="max-w-sm mx-auto sm:max-w-4xl">
+      <h1 class="text-xl sm:text-5xl text-center my-6 ">Convert your HEIC, png and gif to jpg</h1>
+      <p  class="text-lg sm:text-xl  text-center my-6">Upload or Drag/Drop to get started</p>
+   
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="drop-zone" id="drop-zone">
+                <input type="file" name="file" id="file-input"  class="text-center mx-auto py-12 border-4 sm:border-8 border-dashed border-black rounded">
+              </div>
+              <div class="flex justify-center">
+                <button type="submit" id="convert-btn" class=" my-12 outline outline-slate-400  px-6 py-2 rounded-xl hover:rounded-none hover:shadow-white hover:shadow-2xl">Convert</button>
+              </div>
+            </form>
+       
+    </div>
+  </section>
+</div>
+
+<div class="loading-overlay" id="loading-overlay">
+  <div class="loading-spinner"></div>
+</div>
+
+<script>
+  const convertBtn = document.getElementById('convert-btn');
+  const loadingOverlay = document.getElementById('loading-overlay');
+  convertBtn.addEventListener('click', () => {
+    loadingOverlay.classList.add('visible');
+  });
+</script>
+
+{% endblock %}

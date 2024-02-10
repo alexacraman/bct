@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="dark:bg-gray-800 dark:text-gray-50 sm:py-24 bg-image-stars ">
+	<div class="max-w-md mx-auto justify-center p-4 text-center">
+		<h1 class="my-6 text-3xl font-medium leading-tight title-font">Conversion Successful!</h1>
+            <div class=" my-12 outline outline-slate-400  px-6 py-2 rounded-xl hover:rounded-none hover:shadow-white hover:shadow-2xl">
+                <a href="{% url 'extension:download' file_path %}">Download    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 00-2.25 2.25v9a2.25 2.25 0 002.25 2.25h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25H15M9 12l3 3m0 0l3-3m-3 3V2.25" />
+                    </svg>
+                </a>
+            </div> 
+	</div>
+</section>
+{% endblock %}

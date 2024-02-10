@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class=" dark:bg-gray-800 dark:text-gray-100 relative">
+  <section class="w-full py-12 bgimage">
+    <div class="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
+      <h1 class="text-5xl antialiased font-semibold leading-none text-center my-6 ">Convert MOV to MP4</h1>
+      <div id="convertEndpoint" data-url="{% url 'extensions:convert_mov_to_mp4' %}"></div>
+      <input type="file" id="movFile" accept=".mov">
+
+      <div class="flex justify-center items-center">
+        <svg id="btnSvg" class="hidden h-24 w-24 text-bct_red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF156D"></stop><stop offset=".3" stop-color="#FF156D" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF156D" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF156D" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF156D" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF156D" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>
+      </div>
+     
+      <div class="flex justify-center items-center">
+          <button type="button" class="convertBtn rounded-lg border bg-red-800 hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-8 py-2 text-white text-2xl" >
+              Convert
+          </button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  
+  const checkState = () =>{
+    const btnSvg = document.querySelector('#btnSvg');
+      if(btnSvg.classList.contains('hidden')){
+          btnSvg.classList.remove('hidden')
+          btnSvg.classList.add('inline', 'animate-spin')
+      }else if(btnSvg.classList.contains('inline')){
+          btnSvg.classList.remove('inline','animate-spin')
+          btnSvg.classList.add('hidden')
+      }
+    }
+  const convertBtn = document.querySelector('.convertBtn');
+  const fileInput = document.querySelector('#movFile');
+  convertBtn.addEventListener('click', async (event) => {
+      
+      
+      const file = fileInput.files[0];
+      if (!file) {
+          alert('Please select a file.');
+          return;
+      }else{
+        checkState()
+      }
+      const formData = new FormData();
+      formData.append('mov_file', file);
+      await getFile(formData);
+  });
+
+  async function getFile(formData) {
+    const endpointId = document.querySelector('#convertEndpoint');
+    const endpointUrl = endpointId.getAttribute('data-url');
+    const options = {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': getCookie('csrftoken')
+        },
+        credentials: 'same-origin'
+    };
+
+    try {
+        const response = await fetch(endpointUrl, options);
+        if (!response.ok) {
+            throw new Error('Network response was not ok.');
+        }
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'output.mp4'
+        checkState()
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        location.reload()
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+  function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+          var cookies = document.cookie.split(';');
+          for (var i = 0; i < cookies.length; i++) {
+              var cookie = cookies[i].trim();
+              if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                  cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                  break;
+              }
+          }
+      }
+      return cookieValue;
+  }
+</script>
+
+
+  
+   
+
+
+    {% endblock %}

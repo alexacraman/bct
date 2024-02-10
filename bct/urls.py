@@ -21,6 +21,7 @@ urlpatterns = [
     path('cookie/', views.cookie_policy, name='cookie'),
     path('contact/', views.contact_me, name='contact'),
     path('donate/', include('donate.urls', namespace='donate')),
+    path('extensions/', include('extensions.urls', namespace='extensions')),
 ]
 
 if settings.DEBUG:
