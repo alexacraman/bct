@@ -4,13 +4,13 @@
 <div class="max-w-7xl mx-auto my-12">
     <div class="grid grid-cols-1 lg:grid-cols-2">
         <div class="col-span-1 p-2 sm:p-6 ">
-            <h1 class=" text-5xl font-semibold mb-6 text-center"> Billingshurst Community <span class="text-red-800">Transport</span> </h1>
+            <h1 class=" text-5xl font-semibold mb-6 text-center"> Billingshurst Community <span class="text-bct_red">Transport</span> </h1>
             <p class="text-2xl font-medium text-center">  
                 A scheme for those who are unable to use public transport including frail and/or disabled residents of Billingshurst and many of the surrounding villages.</p>
-                <p class="text-2xl font-medium text-center">    For more information please call <span class="text-red-800">01403 787696</span>  or email</p>
+                <p class="text-2xl font-medium text-center">    For more information please call <span class="text-bct_red">01403 787696</span>  or email</p>
             
             <div class="flex justify-center my-12">
-                <a href="mailto:bct@billingshurst.gov.uk" target="_blank"  class="rounded-lg border bg-red-800 hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-8 py-3 text-white text-2xl">Email</a>
+                <a href="mailto:bct@billingshurst.gov.uk" target="_blank"  class="rounded-lg border bg-bct_red hover:bg-red-900 hover:shadow-2xl hover:rounded-none px-8 py-3 text-white text-2xl">Email</a>
             </div>
         </div>
         <div class="col-span-1 p-2 sm:p-6 flex justify-center">
@@ -19,24 +19,11 @@
           </div>
         </div>
         
+
         <script>
           const images = ["{% static 'img/bil.jpg' %}","{% static 'img/hall.png' %}", "{% static 'img/street.png' %}","{% static 'img/church.png' %}"];
-        
-          let currentIndex = 0;
-          const imageElement = document.getElementById('image');
-        
-          const switchImg = () => {
-            currentIndex = (currentIndex + 1) % images.length;
-            // console.log(currentIndex)
-            imageElement.src = images[currentIndex];
-          };
-          //           (currentIndex + 1) increments the current index by 1.
-          // % images.length ensures that the index stays within the bounds of the images array. The modulo operation (%) is used to cycle the index back to 0 when it reaches the length of the array.
-        
-          setInterval(() => {
-            switchImg();
-          }, 2500);
         </script>
+        <script src="{% static 'js/flash.js' %}"></script>
   
 
 </div>

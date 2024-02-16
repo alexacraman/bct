@@ -23,3 +23,12 @@ class ContactForm(forms.Form):
         )
     )
     captcha = ReCaptchaField()
+
+    forbidden_words = ['seo', 'ranking', 'whitehat', 'ranks', 'organically','keywords','baclink', 'toxic', 'profile', 'toxicity','Stacking','comprehensive','metrics']
+
+    def clean_message(self, *args, **kwargs):
+        message = self.cleaned_data.get('message')
+        for keyword in self.forbidden_words:
+            if keyword.lower() in message.lower():
+                raise forms.ValidationError("Forbidden")
+        return message

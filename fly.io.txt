@@ -1,0 +1,87 @@
+fly status
+
+
+fly apps
+create - Create a new application
+destroy - Permanently destroys an app
+errors - View application errors on Sentry.io
+list - List applications
+move - Move an app to another organization
+open - Open browser to current deployed application
+releases - List app releases
+restart - Restart an application
+
+fly image show
+fly image show # machineid
+fly status --app bctransport # app
+fly status --app bct # db
+
+
+fly machine status
+fly machine status 1781979c427648 --app bct 
+fly machine update 1781979c427648 --vm-memory 1024 --app bct
+fly machine 
+api-proxy - Establish a proxy to the Machine API through a Wireguard tunnel for local connections
+clone - Clone a Fly Machine.
+cordon - Deactivate all services on a machine
+create - Create, but don’t start, a machine
+destroy - Destroy Fly machines
+exec - Execute a command on a machine
+kill - Kill (SIGKILL) a Fly machine
+leases - Manage machine leases
+list - List Fly machines
+restart - Restart one or more Fly machines
+run - Run a machine
+start - Start one or more Fly machines
+status - Show current status of a running machine
+stop - Stop one or more Fly machines
+uncordon - Reactivate all services on a machine
+update - Update a machine
+
+
+
+
+
+
+fly scale show # current resources
+fly scale count # Change an app's VM count to the given value
+fly scale  vm          Change an app's VM to a named size (eg. shared-cpu-1x, performance-1x, performance-2x...)
+fly scale memory      Set VM memory
+fly scale memory [memoryMB] -a bctransport
+
+
+fly certs
+add - Add a certificate for an app.
+check - Checks DNS configuration
+list - List certificates for an app.
+remove - Removes a certificate from an app
+show - Shows certificate information
+
+
+
+fly config
+env - Display an app’s runtime environment variables
+save - Save an app’s config file
+show - Show an app’s configuration
+validate - Validate an app’s config file
+
+
+fly ssh console -C "python3 /app/manage.py makemigrations"
+fly ssh console -C "python3 /app/manage.py migrate" 
+fly ssh console -C "python3 /app/manage.py createsuperuser”
+fly ssh console -C "python3 /app/manage.py sqlmigrate account 0001_initial” //to view migration
+ fly ssh console -C "python3 /app/manage.py showmigrations”    
+fly ssh console -C "python3 /app/manage.py flush”    // destroy migrations
+fly ssh console
+cd app
+fly ssh console -C "python3 /app/manage.py tenant_command loaddata --schema=billingshurst app/book/fixtures/places.json " 
+exit
+
+
+fly dashboard metrics
+
+
+fly platform
+regions - List regions
+status - Show current platform status with an optional filter for maintenance or incidents in json mode (eg. incidents, maintenance)
+vm-sizes - List VM Sizes

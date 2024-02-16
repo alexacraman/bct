@@ -24,11 +24,38 @@
                     </p>
                 </div>
                 <div class="flex flex-col p-8 space-y-4 rounded-md dark:bg-gray-900 bg-gray-200">
-                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">3</div>
+                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">4</div>
                     <p class="text-2xl font-semibold">
                         <a href="{% url 'accounts:account-edit' %}">Edit my account</a>
                     </p>
                 </div>
+                
+                {% if user.is_superuser %}
+                <div class="flex flex-col p-8 space-y-4 rounded-md dark:bg-gray-900 bg-gray-200">
+                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">6</div>
+                    <p class="text-2xl font-semibold">
+                        <a href="{% url 'extensions:convert_mov_to_mp4' %}">mov to mp4</a>
+                    </p>
+                </div>
+                <div class="flex flex-col p-8 space-y-4 rounded-md dark:bg-gray-900 bg-gray-200">
+                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">7</div>
+                    <p class="text-2xl font-semibold">
+                        <a href="{% url 'extensions:convert_file_to_jpg' %}">jpg</a>
+                    </p>
+                </div>
+                <div class="flex flex-col p-8 space-y-4 rounded-md dark:bg-gray-900 bg-gray-200">
+                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">8</div>
+                    <p class="text-2xl font-semibold">
+                        <a href="{% url 'extensions:convert_file_to_png' %}">png</a>
+                    </p>
+                </div>
+                <div class="flex flex-col p-8 space-y-4 rounded-md dark:bg-gray-900 bg-gray-200">
+                    <div class="flex items-center justify-center flex-shrink-0 w-12 h-12 text-xl font-bold rounded-full dark:bg-violet-400 dark:text-gray-900">9</div>
+                    <p class="text-2xl font-semibold">
+                        <a href="{% url 'extensions:convert_file_to_gif' %}">gif</a>
+                    </p>
+                </div>
+                {% endif %}
             </div>
         </div>
     </section>

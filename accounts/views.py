@@ -46,7 +46,7 @@ def login_view(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f'Welcome, {username}!')
-                return redirect('donate:donations')
+                return redirect('accounts:account-menu')
             else:
                 messages.error(request, 'Invalid username or password.')
         else:
@@ -68,7 +68,7 @@ def change_password(request):
             user = form.save()
             update_session_auth_hash(request, user)
             messages.success(request, 'Password changed successfully')
-            return redirect('company:dashboard')
+            return redirect('accounts:account-menu')
         else:
             messages.error(request, 'Please correct the errors')
     else:
