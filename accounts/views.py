@@ -60,20 +60,20 @@ def logout_view(request):
     logout(request)
     return redirect('home_page')
 
-@login_required
-def change_password(request):
-    if request.method == 'POST':
-        form = PasswordChangeForm(request.user, request.POST)
-        if form.is_valid():
-            user = form.save()
-            update_session_auth_hash(request, user)
-            messages.success(request, 'Password changed successfully')
-            return redirect('accounts:account-menu')
-        else:
-            messages.error(request, 'Please correct the errors')
-    else:
-        form = PasswordChangeForm(request.user)
-    return render(request, 'registration/password_change_form.html', {'form': form})
+# @login_required
+# def change_password(request):
+#     if request.method == 'POST':
+#         form = PasswordChangeForm(request.user, request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             update_session_auth_hash(request, user)
+#             messages.success(request, 'Password changed successfully')
+#             return redirect('accounts:account-menu')
+#         else:
+#             messages.error(request, 'Please correct the errors')
+#     else:
+#         form = PasswordChangeForm(request.user)
+#     return render(request, 'registration/password_change_form.html', {'form': form})
 
 @login_required
 def account_view(request):

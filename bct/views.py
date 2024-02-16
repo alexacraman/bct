@@ -1,5 +1,3 @@
-import json
-import urllib
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives, BadHeaderError

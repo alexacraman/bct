@@ -8,8 +8,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include("accounts.urls", namespace='accounts')),
+    path("accounts/", include("django.contrib.auth.urls")),
     path('', views.home_page, name='home_page'),
     path('volunteer/', views.volunteers_needed, name="volunteer"),
     path('faqs/', views.faqs, name="faqs"),

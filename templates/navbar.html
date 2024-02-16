@@ -1,11 +1,17 @@
 {% load static %}
-{% url 'accounts:register' as signup_url %}
+<!-- {% url 'accounts:register' as signup_url %}
 {% url 'accounts:change_password' as change_password_url %}
 {% url 'accounts:password_reset' as reset_url %}
 {% url 'accounts:login_view' as login_url  %}
 {% url 'accounts:logout_view' as logout_url %}
-{% url 'accounts:account-menu' as account_url %}
+{% url 'accounts:account-menu' as account_url %} -->
 
+{% url 'accounts:register' as signup_url %}
+{% url 'change_password' as change_password_url %}
+{% url 'password_reset' as reset_url %}
+{% url 'login' as login_url  %}
+{% url 'accounts:logout_view' as logout_url %}
+{% url 'accounts:account-menu' as account_url %}
 
 {% url 'contact' as contact_url %}
 {% url 'home_page' as home_url %}
@@ -26,10 +32,10 @@
     <!-- svg insert -->
   </div>
   <nav class="navbar_items rev_navbar_toggleShow  ">
-        <div class="navbar_link   p-1 rounded" {% if request.path == home_page %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
+        <div class="navbar_link   p-1 rounded" {% if request.path == home_url %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
             <a class="nav-link" href="{{ home_url }}">Home</a>
         </div>
-        <div class="navbar_link   p-1 rounded" {% if request.path == customers %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
+        <div class="navbar_link   p-1 rounded" {% if request.path == customers_url %}class=" p-1 rounded text-red-700 text-4xl "{% endif %}>
             <a class="nav-link" href="{{ customers_url }}">Customers</a>
         </div>
         <div class="navbar_link  p-1 rounded" {% if request.path == faqs_url %}class=" p-1 rounded text-red-700 text-4xl"{% endif %}>
