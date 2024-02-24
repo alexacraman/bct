@@ -38,16 +38,11 @@ stop - Stop one or more Fly machines
 uncordon - Reactivate all services on a machine
 update - Update a machine
 
-
-
-
-
-
 fly scale show # current resources
 fly scale count # Change an app's VM count to the given value
 fly scale  vm          Change an app's VM to a named size (eg. shared-cpu-1x, performance-1x, performance-2x...)
 fly scale memory      Set VM memory
-fly scale memory [memoryMB] -a bctransport
+fly scale memory [memoryMB] -a bct
 
 
 fly certs
