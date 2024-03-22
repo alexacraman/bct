@@ -26,9 +26,17 @@ class ContactForm(forms.Form):
 
     forbidden_words = ['seo', 'ranking', 'whitehat', 'ranks', 'organically','keywords','baclink', 'toxic', 'profile', 'toxicity','Stacking','comprehensive','metrics']
 
+            
+    def is_not_english(self, data):
+        return all(ord(char) < 128 for char in data)
+    
     def clean_message(self, *args, **kwargs):
         message = self.cleaned_data.get('message')
+        
         for keyword in self.forbidden_words:
             if keyword.lower() in message.lower():
                 raise forms.ValidationError("Forbidden")
+            
+        if not self.is_not_english(message):
+            raise forms.ValidationError('Error with language')
         return message

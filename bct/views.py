@@ -3,21 +3,23 @@ from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives, BadHeaderError
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.views.decorators.cache import cache_page
 
 from .forms import ContactForm
 
+@cache_page(60 * 60 * 24 * 365)
 def home_page(request):
     return render(request, 'views/home_page.html', {})
-
+@cache_page(60 * 60 * 24 * 365)
 def volunteers_needed(request):
     return render(request, 'views/volunteer.html', {})
-
+@cache_page(60 * 60 * 24 * 365)
 def customers(request):
     return render(request, 'views/customers.html', {})
-
+@cache_page(60 * 60 * 24 * 365)
 def faqs(request):
     return render(request, 'views/faqs.html', {})
-
+@cache_page(60 * 60 * 24 * 365)
 def team(request):
     return render(request, 'views/team.html', {})
 
